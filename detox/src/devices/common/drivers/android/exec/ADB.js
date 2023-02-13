@@ -8,7 +8,8 @@ const { escape } = require('../../../../../utils/pipeCommands');
 const DeviceHandle = require('../tools/DeviceHandle');
 const EmulatorHandle = require('../tools/EmulatorHandle');
 
-const INSTALL_TIMEOUT = 45000; // TODO Double check 45s makes sense
+// In some CI environments intall can be very slow (for Github Actions 45 seconds was not enough)
+const INSTALL_TIMEOUT = 120000;
 
 class ADB {
   constructor() {
